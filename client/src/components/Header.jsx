@@ -25,11 +25,11 @@ const Header = () => {
         <p>New: AI feature integrated</p>
         <img src={assets.star_icon} alt="star-icon" className='w-2.5'/>
        </div>
-
+{/* Where your words live. Your platform. */}
        <h1 className='text-3xl sm:text-6xl font-semibold sm:leading-16 text-gray-700'>
-        Your own <span className='text-primary'>blogging</span><br/> platform.
+        Where your  <span className='text-primary'>Words </span>live.<br/> Your platform.
        </h1>
-       <p className='my-6 sm:my-8 max-w-2xl mx-auto max-sm:text-xs text-gray-500'>This is your space to think out loud, to share what matters, and to write without filters. Whether it's one word or a thousand, your story starts right here.</p>
+       <p className='my-6 sm:my-8 max-w-2xl mx-auto max-sm:text-xs text-gray-500'>This is a quiet corner of the internet where I write and you read. No noise, no clutter — just thoughts, shared one post at a time.</p>
 
        <form onSubmit={onSubmitHandler} className='flex justify-between max-w-lg max-sm:scale-75 mx-auto border border-gray-300 bg-white rounded-full overflow-hidden'>
             <input 

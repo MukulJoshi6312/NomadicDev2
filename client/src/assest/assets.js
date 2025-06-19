@@ -11,7 +11,7 @@ import blog_pic_10 from './blog_pic_10.png';
 import facebook_icon from './facebook_icon.svg'
 import googleplus_icon from './googleplus_icon.svg'
 import twitter_icon from './twitter_icon.svg'
-import logo from './logo.svg'
+import logo from './logo.png'
 import arrow from './arrow.svg'
 import logo_light from './logo_light.svg'
 import blog_icon from './blog_icon.png'
@@ -58,7 +58,7 @@ export const assets = {
     dashboard_icon_3,
     dashboard_icon_4,
 }
-export const blogCategories = ['All', 'Technology', 'Startup', 'Lifestyle', 'Finance']
+export const blogCategories = ['All', 'Technology', 'Startup', 'Lifestyle','Trip', 'Finance']
 
 export const blog_data = [
     {
@@ -246,14 +246,14 @@ export const dashboard_data = {
 export const footer_data = [
       {
           title: "Quick Links",
-          links: ["Home", "Best Sellers", "Offers & Deals", "Contact Us", "FAQs"]
+          links: ["Home", "About", "Blogs", "Category", "FAQs"]
       },
       {
           title: "Need Help?",
-          links: ["Delivery Information", "Return & Refund Policy", "Payment Methods", "Track your Order", "Contact Us"]
+          links: ["info@example.com", "+91 9876543210","Contact Us"]
       },
       {
           title: "Follow Us",
-          links: ["Instagram", "Twitter", "Facebook", "YouTube"]
+          links: ["Instagram", "Twitter", "Facebook",]
       }
   ];

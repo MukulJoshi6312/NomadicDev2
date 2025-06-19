@@ -7,7 +7,7 @@ const Footer = () => {
       <div className='flex flex-col md:flex-row items-center justify-between gap-10 py-10 border-b border-gray-500/30 text-gray-500'>
     <div>
         <img src={assets.logo} alt="logo" className='w-32 sm:w-44' />
-        <p className='max-w-[410px] mt-6'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum unde quaerat eveniet cumque accusamus atque qui error quo enim fugiat?</p>
+        <p className='max-w-[410px] mt-6'>This blog isn't just built for writing — it's powered by intelligence. With AI integrated into the platform, every post you create is supported by smart suggestions, improved flow, and thoughtful enhancements. It's your ideas, elevated with technology.</p>
     </div>
     <div className='flex flex-wrap justify-between w-full md:w-[45%] gap-5'>
         {
