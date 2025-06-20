@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import Loader from '../components/Loader';
 import { useAppContext } from '../context/AppContext';
 import toast from 'react-hot-toast';
+import BlogCard from '../components/BlogCard';
 
 const Blog = () => {
     const {id} =   useParams()
@@ -18,12 +19,19 @@ const Blog = () => {
     const [comments,setComments] = useState([]);
     const [name,setName] = useState('');
     const [content,setContent] = useState('');
+    const [relatedBlog,setRelatedBlog] = useState([]);
+
+
+
 
     const fetchBlogData = async ()=>{
         try{
 
             const {data} = await axios.get(`/api/blog/${id}`);
             data.success ? setData(data.blog) : toast.error(data.message)
+            
+            const {data:myData} = await  axios.get(`/api/blog/related/${data?.blog?.category}/${data?.blog?._id}`);
+            setRelatedBlog(myData.relatedBlogs)
         }catch(error){
             toast.error(error.message)
         }
@@ -56,7 +64,10 @@ const Blog = () => {
         }catch(error){
             toast.error(error.message)
         }
-    }
+    
+        }
+
+
 
     useEffect(()=>{
         fetchBlogData();
@@ -131,6 +142,22 @@ const Blog = () => {
                         <img src={assets.googleplus_icon} alt="google" width={50} />
                     </div>
                 </div>
+
+            <div className='max-w-5xl mx-auto'>
+            <div>
+                <h3 className='mb-8 text-3xl font-semibold text-center'>Related Blogs</h3>
+            </div>
+            <div className=' flex flex-wrap justify-center gap-8'>
+                {
+                    relatedBlog.slice(0,6).map((blog)=>(
+                        <div key={blog._id} className='w-[270px]'>
+                        <BlogCard blog={blog}  />
+                        </div>
+                    ))
+                }
+            </div>
+            </div>
+
         </div>
         <Footer/>
 

@@ -12,7 +12,6 @@ export const addBlog = async(req,res)=>{
         const imageFile = req.file;
 
         // check if all fileds are present
-        console.log(title,subTitle,description,category,isPublished)
 
         if(!title || !description || !category || !imageFile){
             return res.json({
@@ -68,8 +67,6 @@ export const getAllBlogs = async(req,res)=>{
             success:true,
             blogs
         })
-
-
     }catch(error){
         res.status(500).json({
             success:false,
@@ -77,6 +74,30 @@ export const getAllBlogs = async(req,res)=>{
         })
     }
 }
+
+export const getRelatedBlogs = async (req,res)=>{
+        const { category, blogId } = req.params; 
+
+        try {
+            const relatedBlogs = await Blog.find({
+            isPublished: true,
+            category: category,
+            _id: { $ne: blogId } 
+            });
+
+            res.json({
+            success: true,
+            relatedBlogs
+            });
+
+        } catch (error) {
+            res.status(500).json({
+            success: false,
+            message: error.message,
+            });
+        }
+        }
+
 
 export const getBlogById = async(req,res)=>{
     try{
